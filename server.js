@@ -75,7 +75,7 @@ function testTwoHandler (req, res){
     })
 }
 function dataHandler(req, res){
-    let SQL = 'SELECT * FROM mycollection'
+    let SQL = 'SELECT * FROM myCollection'
     client.query(SQL).then( x => {
         // console.log(x);
         res.render('mydata', {collection: x.rows})
