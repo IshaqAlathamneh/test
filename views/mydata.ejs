@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs')%>
+    </header>
+    <main>
+        <% collection.forEach( element => {%>
+            
+       <a href="/details/<%= element.id%>"><img src="<%= element.image%>" alt=""></a>
+    
+        <% })%>
+    </main>
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
+    
+</body>
+</html>

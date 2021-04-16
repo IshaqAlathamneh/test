@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs')%>
+    </header>
+    <main>
+        <form action="/" method="POST">
+            <input type="text" name="search">
+            <button>SEARCH</button>
+        </form>
+        <% if(cond){%>
+        <div>
+            <h1>
+                <%= data.name%>
+            </h1>
+            <img src="<%= data.img%>" alt="">
+            <p><%= data.level%></p>
+        </div>
+        <%}%>
+    </main>
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
+    
+</body>
+</html>

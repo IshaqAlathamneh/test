@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% toto.forEach(element => {%>
+    <div>
+        <form action="/test" method="POST">
+        <h2>
+            <%= element.name%>
+        </h2>
+        <input type="hidden" value="<%= element.name%>" name="one">
+        <img src="<%= element.img%>" alt="">
+        <input type="hidden" value="<%= element.img%>" name="two">
+        <p><%= element.level%></p>
+        <input type="hidden" value="<%= element.level%>" name="three">
+
+            <button type="submit">Save digimon</button>
+        </form>
+    </div>
+    <% })%>
+</body>
+</html>

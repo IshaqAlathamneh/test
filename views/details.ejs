@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs')%>
+    </header>
+    <main>
+        <div>
+            <h1><%= data.name%></h1>
+            <img src="<%= data.image%>" alt="">
+            <p><%= data.level%></p>
+            <form action="/details/<%= data.id%>?_method=DELETE" method="POST">
+                <input type="hidden" value="<%= data.id%>" name="id">
+                <button>DELETE</button>
+            </form>
+            <button onclick="hideForm()">UPDATE</button>
+            <form action="/details/<%= data.id%>?_method=PUT" method="POST" id="myForm">
+                <input type="text" value="<%= data.name%>" name="name">
+                <input type="text" value="<%= data.image%>" name="image">
+                <input type="text" value="<%= data.level%>" name="level">
+                <input type="hidden" value="<%= data.id%>" name="id">
+                <button type="submit">update data</button>
+            </form>
+
+
+        </div>
+    </main>
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('#myForm').hide();
+        function hideForm(){
+            $('#myForm').toggle();
+        }
+    </script>
+</body>
+</html>
