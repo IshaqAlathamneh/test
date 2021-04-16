@@ -42,7 +42,7 @@ function notFoundHandler(request, response) {
 }
 
 function errorHandler(err, request, response, next) {
-    response.status(500).render('error');
+    response.status(500).render('error', {err: err});
     
 }
 //---------------------------------------------------------
@@ -71,7 +71,7 @@ function testTwoHandler (req, res){
     let SQL = 'INSERT INTO myCollection (name, image, level) VALUES($1, $2, $3) RETURNING *';
     client.query(SQL, values).then( y => {
         console.log(y.rows)
-        res.render('index')
+        res.render('index', {cond: 0})
     })
 }
 function dataHandler(req, res){
